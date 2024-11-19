@@ -1,0 +1,128 @@
+﻿<!-- Sidebar for Chat Button -->
+<div class="cb-chat-button-container hide" id="cb-sidechatdiv">
+    <button class="chat-button" id="chat" onclick="showMainChatbotButton()">
+        <img class="cursor-pointer left-long-solid">
+    </button>
+</div>
+<!-- Main Chat Button and Close Icon -->
+<div class="cb-chat-button-container" id="cb-mainchatdiv">
+    <img class="cbclose-icon cb-close-icon cb-cursor-pointer cbclose"  onclick="toggleButtons()">
+    <button class="chat-button" onclick="toggleChatbotWindow()" id="chat">
+        <img class="chat-avatar cursor-pointer">
+    </button>
+</div>
+<!-- Chat Screen Area -->
+<div class="cb-chat-screen">
+    <div class="cb-chat-screen-header">
+        <label id="cb-conversation"></label> 
+        <img class="cb-cursor-pointer cbiexpandcon" onclick="showChatbotPopup()">
+        <img class="cb-cursor-pointer cbclose cbmainclose" onclick="hideChatbot()">
+    </div>
+    <div>
+        <!-- Suggestions and Chat Input Area -->
+        <div id="grid" class="cb-overflow-x-hidden cb-overflow-y-auto cb-flexi-col cb-chat-screen-container">
+            <div class="cb-flexi-1 cb-overflow-x-hidden cb-overflow-y-auto cb-flex-center"
+                 onclick="emptySusggestionbox(event)" id="chat-suggestions-boxes">
+                <div class="suggestions-boxes">
+                    <!-- Suggestion Box for Questions -->
+                    <div class="cb-right-box cb-cursor-pointer suggestion-boxitem " data-target="suggestionbox2"
+                         onclick="toggleSuggestionBox('suggestionbox2')">
+                         <img class="cbquestion"  >
+                        <span id="cb-about"></span>
+                    </div>
+                    <div class="cb-left-box cb-cursor-pointer suggestion-boxitem" data-target="suggestionbox1"
+                         onclick="toggleSuggestionBox('suggestionbox1')">
+                         <img class="cbsearch">
+                         <span id="cb-searchtext"></span>
+                    </div>
+                </div>
+            </div>
+            <div id="cb-questions">
+               
+            </div>
+            <!-- Chat Input Area -->
+            <div class="cb-padding-10 cb-padding-0-10-10-10 cb-flex-center">
+                <div id="visualizer" class="visualizer"></div> <!-- Moved above the textarea for positioning -->
+                <textarea id="chat-input" class="cb-form-control"
+                          oninput="checkEnter(event)"  onkeydown="checkEnter(event)"></textarea>
+                          <img onclick="sendMessage()"  class="cb-chat-send-icon cb-mainchat-send-icon cb-cursor-pointer hide">
+                <img draggable="false"   class="height-18  microphone cursor-pointer audioicon" id="chatbot-mic">
+            </div>
+        </div>
+        
+    </div>
+</div>
+<!-- Chatbot Popup Container -->
+<div class="cb-chatbot-popup-container hide">
+    <div class="overlay" id="overlay">
+        <div class="cb-content">
+            <section class="cb-sections">
+                <div class="cb-right-content">
+                    <!-- Right Panel Header with Settings and logo -->
+                    <div class="cb-right-content-header">
+                        <div class="cb-toggle-panel cursor-pointer" onclick="slideSideMenu()">
+                            <img class="bars">
+                        </div>
+                        <img  id="mainlogo" class="cb-logo-image">
+                        <img  id="sidelogo" class="cb-logo-image hide">
+
+                    </div>
+                          <!-- Button to Start New Conversation -->
+                          <div class="cb-right-content-add-more-btn">
+                            <button onclick="startNewConversation()" class="cb-bb-compButton  cb-bb-compButton_primary cb-cursor-pointer"
+                                    type="button" id="add-more-chat">
+                                <img class="plus">
+                                <span id="newconversition"></span>
+                            </button>
+                        </div>
+                        <!-- Chat History Area -->
+                        <div class="cb-right-content-chat-history"  id="threadItems"></div>
+                    </div>
+                    <div class="cb-left-content">
+                        <!-- Left Panel Header with Greeting and Close Options -->
+                        <div class="left-content-header" >
+                            <div class="greeting">
+                                <h1 id="cb-Hello"></h1>
+                                <h4 id="cb-Help"></h4>
+                            </div>
+                            <div>
+                                <img id="cb-minimizepopup"   onclick="minimizePopup()"  class="cb-cursor-pointer minimize">
+                                <img class="close-icon cb-cursor-pointer cbclose cbcloseblack"  onclick="closePopup()">
+                            </div>
+                        </div>
+                        <!-- Chat History and Suggestions in the Left Panel -->
+                        <div class="cb-left-content-body" id="leftchatbox" onclick="emptyPopupSusggestionbox(event)">
+                            <div id="popup-suggestions-boxes" class="popup-suggestions-boxes">
+                                <div class="cb-left-box popupsuggestion-boxitem" data-target="popupsuggestionbox2"
+                                     onclick="toggleSuggestionPopupBoxes(this)">
+                                     <img class="cbquestion cb-popup-question">
+                                     <span id="cb-CreatedCorrespondence" class="CreatedCorrespondence"></span>
+                                </div>
+                                <div class="cb-right-box popupsuggestion-boxitem" data-target="popupsuggestionbox1"
+                                     onclick="toggleSuggestionPopupBoxes(this)">
+                                    <img class="cbsearch cb-popup-search" >
+                                    <span id="cb-popupWordSearch" class="WordSearch"></span>
+                                </div>
+                            </div>
+                            <div class="cb-chat-screen-container">
+                                <div id="popupmessages" class="cb-flexi-1 cb-overflow-x-hidden cb-overflow-y-auto"></div>
+                            </div>
+                        </div>
+                        <!-- Popup Suggestion Boxes -->
+                        <div id="cb-PopUpquestions">    
+                        </div>
+                        <!-- Footer of the Left Panel with Input Field -->
+                        <div class="cb-padding-10 cb-padding-0-10-10-10 cb-flex-center">
+                            <div id="visualizer2" class="visualizer"></div> <!-- Moved above the textarea for positioning -->
+                            <textarea id="Popupchat-input" class="cb-form-control ch-padding-left-60px" 
+                                 oninput= "onUserInput(event)"     onkeydown="onUserInput(event)"></textarea>
+                                 <img onclick="sendpopupMessage()"  class="cb-chat-send-icon  cb-popupchat-send-icon cb-cursor-pointer hide">
+                            <img draggable="false" class="height-18 cursor-pointer microphone popupaudioicon" id="popup-chatbot-mic">
+                        </div>
+                    </div>
+                </div>      
+        </div>
+    </div>
+
+    
+  

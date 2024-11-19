@@ -1,0 +1,70 @@
+{
+  "about": {
+    "ar": "يمكنك سؤالي عن النظام",
+    "en": "You can ask me about the system"
+  },
+  "searchtext": {
+    "ar": "يمكنك البحث من خلالي داخل النظام",
+    "en": "You can search through me within the system"
+  },
+  "hello": {
+    "ar": "مرحبا بك",
+    "en": "Welcome"
+  },
+  "newConversition": {
+    "ar": "محادثة جديدة",
+    "en": "New conversation"
+  },
+  "chatText": {
+    "ar": "اكتب رسالتك هنا",
+    "en": "Write your message here"
+  },
+  "proccessingAudio": {
+    "ar": "جارٍ المعالجة ...",
+    "en": "Processing..."
+  },
+  "recordingaudio": {
+    "ar": "جارٍ التسجيلِ...",
+    "en": "Recording ..."
+  },
+  "messageSentStatus": {
+    "ar": "منذ لحظات",
+    "en": "Moments ago"
+  },
+  "apiSearchResponse": {
+    "ar": "تم العثور على {0} من النتائج",
+    "en": "{0} results has been found"
+  },
+  "forDetails": {
+    "ar": "للأطلاع على التفاصيل",
+    "en": "for more details"
+  },
+  "clickHere": {
+    "ar": "اضغط هنا",
+    "en": "click here"
+  },
+  "startRecording": {
+    "ar": "ابدأ التسجيل",
+    "en": "Start Recording"
+  },
+  "recording": {
+    "ar": "جار التسجيل",
+    "en": "Recording in Progress"
+  },
+  "micAccessDenied": {
+    "ar": "لا يمكن الوصول إلى الميكروفون",
+    "en": "Cannot access the microphone"
+  },
+  "error": {
+    "ar": "حصل خطأ ما.",
+    "en": "Something went wrong."
+  },
+  "delete": {
+    "ar": "حذف",
+    "en": "delete"
+  },
+  "rename": {
+    "ar": "تعديل",
+    "en": "Rename"
+  }
+}
