@@ -1,4 +1,4 @@
-let domain = "Chatbot";
+let domain = "https://hmza-smha.github.io/esense-chatbot";
 
 async function loadScript(src, type = "text/javascript") {
   return new Promise((resolve, reject) => {

@@ -46,6 +46,7 @@ async function appendChatbotButton(chatbotConfigration) {
       .insertAdjacentHTML("beforeend", htmlContent);
     localization = await getLocalization(chatbotConfigration);
     loadChatbotImages();
+    setStyles();
     setPosition(chatbotConfigration);
     setThemeColor(chatbotConfigration.themeColor);
     setThemeFont();
@@ -56,6 +57,16 @@ async function appendChatbotButton(chatbotConfigration) {
   } catch (error) {
     console.error("Error loading HTML:", error);
   }
+}
+
+function setStyles() {
+  const linkElement = document.createElement('link');
+
+  linkElement.rel = 'stylesheet';
+  linkElement.type = 'text/css'; 
+  linkElement.href = domain + '/style.css'; 
+
+  document.head.appendChild(linkElement);
 }
 
 function setPosition(config) {
